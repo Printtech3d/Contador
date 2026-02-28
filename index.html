@@ -11,19 +11,15 @@
     <h2 id="contador">Carregando...</h2>
 
     <script>
-        const namespace = "Printtech3d";
-        const key = "Palavra-diaria";
-
-        fetch(`https://api.countapi.xyz/hit/${namespace}/${key}`)
-            .then(res => res.json())
+        fetch("https://api.counterapi.dev/v1/Printtech3d/Palavra-diaria/up")
+            .then(response => response.json())
             .then(data => {
-                document.getElementById("contador").innerText = data.value;
-
+                document.getElementById("contador").innerText = data.count;
+            })
             .catch(() => {
-                document.getElementById("contador").innerText = "Erro ao carregar";
+                document.getElementById("contador").innerText = "Erro";
             });
     </script>
-
 
 </body>
 </html>
